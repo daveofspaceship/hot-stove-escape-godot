@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d3yqj4x4w3k5j"]
+
+[ext_resource type="Script" path="res://fridge.gd" id="1_q1w2e"]
+[ext_resource type="Texture2D" uid="uid://c7w3x8y4m3k6j" path="res://Tiles_Food/tile_0073.png" id="2_f5y4w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(20, 20)
+
+[node name="Fridge" type="Area2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_q1w2e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_f5y4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

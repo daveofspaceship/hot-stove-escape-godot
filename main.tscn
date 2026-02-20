@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://bld5nbjmxhwfh"]
+
+[ext_resource type="Script" uid="uid://dpiwjrf1g7ry3" path="res://main.gd" id="1_z3vpl"]
+[ext_resource type="PackedScene" uid="uid://c8n6j3v1b8b7j" path="res://Player.tscn" id="2_ywhs6"]
+[ext_resource type="PackedScene" uid="uid://b2v7x8y4m3k6j" path="res://Lava.tscn" id="3_60j0s"]
+[ext_resource type="Texture2D" uid="uid://djj4otiaviocd" path="res://Tiles_Environment/tile_0000.png" id="4_88jlf"]
+[ext_resource type="PackedScene" uid="uid://d3yqj4x4w3k5j" path="res://Fridge.tscn" id="5_g5ykv"]
+[ext_resource type="PackedScene" uid="uid://d1v2w3x4y506a" path="res://GameUI.tscn" id="6_sxwjr"]
+
+[node name="Main" type="Node2D" unique_id=2108780853]
+process_mode = 3
+script = ExtResource("1_z3vpl")
+
+[node name="Player" parent="." unique_id=1284671901 instance=ExtResource("2_ywhs6")]
+position = Vector2(300, 1299)
+
+[node name="Lava" parent="." unique_id=1866317018 instance=ExtResource("3_60j0s")]
+position = Vector2(1500, 1740)
+
+[node name="Platforms" type="Node2D" parent="." unique_id=516712276]
+
+[node name="Platform1" type="StaticBody2D" parent="Platforms" unique_id=710616461]
+position = Vector2(300, 1350)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform1" unique_id=1127037160]
+scale = Vector2(3, 3)
+texture = ExtResource("4_88jlf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform1" unique_id=132744926]
+polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
+
+[node name="Platform2" type="StaticBody2D" parent="Platforms" unique_id=2052507685]
+position = Vector2(660, 1440)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform2" unique_id=552143687]
+scale = Vector2(3, 3)
+texture = ExtResource("4_88jlf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform2" unique_id=1313918742]
+polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
+
+[node name="Platform3" type="StaticBody2D" parent="Platforms" unique_id=1710987740]
+position = Vector2(1020, 1500)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform3" unique_id=207984522]
+scale = Vector2(3, 3)
+texture = ExtResource("4_88jlf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform3" unique_id=1843662510]
+polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
+
+[node name="Platform4" type="StaticBody2D" parent="Platforms" unique_id=1676534580]
+position = Vector2(1380, 1410)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform4" unique_id=697652477]
+scale = Vector2(3, 3)
+texture = ExtResource("4_88jlf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform4" unique_id=829863059]
+polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
+
+[node name="Platform5" type="StaticBody2D" parent="Platforms" unique_id=5390467]
+position = Vector2(1740, 1470)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform5" unique_id=672970195]
+scale = Vector2(3, 3)
+texture = ExtResource("4_88jlf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform5" unique_id=1779041596]
+polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
+
+[node name="Platform6" type="StaticBody2D" parent="Platforms" unique_id=1170474248]
+position = Vector2(2100, 1350)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform6" unique_id=2097075693]
+scale = Vector2(3, 3)
+texture = ExtResource("4_88jlf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform6" unique_id=1872265490]
+polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
+
+[node name="Platform7" type="StaticBody2D" parent="Platforms" unique_id=500649467]
+position = Vector2(1800, 1050)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform7" unique_id=1596988469]
+scale = Vector2(3, 3)
+texture = ExtResource("4_88jlf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform7" unique_id=1540750655]
+polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
+
+[node name="Platform8" type="StaticBody2D" parent="Platforms" unique_id=1532126444]
+position = Vector2(1350, 840)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform8" unique_id=1857441675]
+scale = Vector2(3, 3)
+texture = ExtResource("4_88jlf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform8" unique_id=70703574]
+polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
+
+[node name="Platform9" type="StaticBody2D" parent="Platforms" unique_id=24506231]
+position = Vector2(900, 660)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform9" unique_id=1702307441]
+scale = Vector2(3, 3)
+texture = ExtResource("4_88jlf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform9" unique_id=1512835627]
+polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
+
+[node name="Fridge" parent="." unique_id=1276542531 instance=ExtResource("5_g5ykv")]
+position = Vector2(900, 570)
+
+[node name="GameUI" parent="." unique_id=904681393 instance=ExtResource("6_sxwjr")]
