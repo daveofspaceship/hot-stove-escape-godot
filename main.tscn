@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://djj4otiaviocd" path="res://Tiles_Environment/tile_0000.png" id="4_88jlf"]
 [ext_resource type="PackedScene" uid="uid://d3yqj4x4w3k5j" path="res://Fridge.tscn" id="5_g5ykv"]
 [ext_resource type="PackedScene" uid="uid://d1v2w3x4y506a" path="res://GameUI.tscn" id="6_sxwjr"]
+[ext_resource type="Script" path="res://moving_platform.gd" id="7_abcde"]
 
 [node name="Main" type="Node2D" unique_id=2108780853]
 process_mode = 3
@@ -49,8 +50,11 @@ texture = ExtResource("4_88jlf")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform3" unique_id=1843662510]
 polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
 
-[node name="Platform4" type="StaticBody2D" parent="Platforms" unique_id=1676534580]
+[node name="Platform4" type="AnimatableBody2D" parent="Platforms" unique_id=1676534580]
 position = Vector2(1380, 1410)
+script = ExtResource("7_abcde")
+travel_distance = Vector2(300, 0)
+duration = 3.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform4" unique_id=697652477]
 scale = Vector2(3, 3)
@@ -80,7 +84,7 @@ texture = ExtResource("4_88jlf")
 polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
 
 [node name="Platform7" type="StaticBody2D" parent="Platforms" unique_id=500649467]
-position = Vector2(1800, 1050)
+position = Vector2(1800, 1250)
 
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform7" unique_id=1596988469]
 scale = Vector2(3, 3)
@@ -89,8 +93,11 @@ texture = ExtResource("4_88jlf")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform7" unique_id=1540750655]
 polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
 
-[node name="Platform8" type="StaticBody2D" parent="Platforms" unique_id=1532126444]
-position = Vector2(1350, 840)
+[node name="Platform8" type="AnimatableBody2D" parent="Platforms" unique_id=1532126444]
+position = Vector2(1500, 1100)
+script = ExtResource("7_abcde")
+travel_distance = Vector2(0, -200)
+duration = 2.5
 
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform8" unique_id=1857441675]
 scale = Vector2(3, 3)
@@ -100,7 +107,7 @@ texture = ExtResource("4_88jlf")
 polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
 
 [node name="Platform9" type="StaticBody2D" parent="Platforms" unique_id=24506231]
-position = Vector2(900, 660)
+position = Vector2(1200, 900)
 
 [node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform9" unique_id=1702307441]
 scale = Vector2(3, 3)
@@ -109,7 +116,114 @@ texture = ExtResource("4_88jlf")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform9" unique_id=1512835627]
 polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
 
+[node name="Platform10" type="AnimatableBody2D" parent="Platforms"]
+position = Vector2(800, 900)
+script = ExtResource("7_abcde")
+travel_distance = Vector2(-400, 0)
+duration = 4.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform10"]
+scale = Vector2(3, 3)
+texture = ExtResource("4_88jlf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform10"]
+polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
+
+[node name="Platform11" type="StaticBody2D" parent="Platforms"]
+position = Vector2(250, 850)
+
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform11"]
+scale = Vector2(3, 3)
+texture = ExtResource("4_88jlf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform11"]
+polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
+
+[node name="Platform12" type="StaticBody2D" parent="Platforms"]
+position = Vector2(600, 750)
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform12"]
+scale = Vector2(3, 3)
+texture = ExtResource("4_88jlf")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform12"]
+polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
+
+[node name="Platform13" type="AnimatableBody2D" parent="Platforms"]
+position = Vector2(900, 700)
+script = ExtResource("7_abcde")
+travel_distance = Vector2(0, -150)
+duration = 2.0
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform13"]
+scale = Vector2(3, 3)
+texture = ExtResource("4_88jlf")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform13"]
+polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
+
+[node name="Platform14" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1200, 600)
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform14"]
+scale = Vector2(3, 3)
+texture = ExtResource("4_88jlf")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform14"]
+polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
+
+[node name="Platform15" type="AnimatableBody2D" parent="Platforms"]
+position = Vector2(1500, 550)
+script = ExtResource("7_abcde")
+travel_distance = Vector2(250, 0)
+duration = 3.5
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform15"]
+scale = Vector2(3, 3)
+texture = ExtResource("4_88jlf")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform15"]
+polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
+
+[node name="Platform16" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1900, 500)
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform16"]
+scale = Vector2(3, 3)
+texture = ExtResource("4_88jlf")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform16"]
+polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
+
+[node name="Platform17" type="AnimatableBody2D" parent="Platforms"]
+position = Vector2(1600, 450)
+script = ExtResource("7_abcde")
+travel_distance = Vector2(0, -100)
+duration = 1.5
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform17"]
+scale = Vector2(3, 3)
+texture = ExtResource("4_88jlf")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform17"]
+polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
+
+[node name="Platform18" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1300, 400)
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform18"]
+scale = Vector2(3, 3)
+texture = ExtResource("4_88jlf")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform18"]
+polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
+
+[node name="Platform19" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1000, 350)
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform19"]
+scale = Vector2(3, 3)
+texture = ExtResource("4_88jlf")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform19"]
+polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
+
+[node name="Platform20" type="AnimatableBody2D" parent="Platforms"]
+position = Vector2(700, 300)
+script = ExtResource("7_abcde")
+travel_distance = Vector2(-300, 0)
+duration = 4.0
+[node name="Sprite2D" type="Sprite2D" parent="Platforms/Platform20"]
+scale = Vector2(3, 3)
+texture = ExtResource("4_88jlf")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Platforms/Platform20"]
+polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
+
 [node name="Fridge" parent="." unique_id=1276542531 instance=ExtResource("5_g5ykv")]
-position = Vector2(900, 570)
+position = Vector2(250, 250)
 
 [node name="GameUI" parent="." unique_id=904681393 instance=ExtResource("6_sxwjr")]

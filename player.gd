@@ -10,18 +10,27 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	motion_mode = MOTION_MODE_GROUNDED
-	$Sprite2D.visible = true
+	if has_node("Sprite2D"):
+		$Sprite2D.visible = true
+
+var jumps_remaining = 2
 
 func _physics_process(delta):
 	# Add the gravity.
 	velocity.y += gravity * delta
 
+	# Reset jumps when on floor
+	if is_on_floor():
+		jumps_remaining = 2
+
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and jumps_remaining > 0:
 		velocity.y = JUMP_VELOCITY
+		jumps_remaining -= 1
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("move_left", "move_right")
+
 	if direction:
 		velocity.x = direction * SPEED
 	else:

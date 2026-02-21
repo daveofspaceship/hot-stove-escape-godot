@@ -12,7 +12,7 @@ func _ready():
 	# Pause the game at the start
 	get_tree().paused = true
 	# Show the start message
-	game_ui.show_message("Press Space to Jump and Escape the Heat!\n(Press R to Restart anytime)")
+	game_ui.show_message("Escape the Heat!")
 	# Connect signals
 	player.connect("died", on_player_died)
 	# Find the fridge and connect its signal
@@ -20,24 +20,28 @@ func _ready():
 	if fridge:
 		fridge.connect("player_won", on_player_won)
 
-func _input(event):
-	# Handle restart input explicitly when game over
-	if game_over and event.is_action_pressed("reset_game"):
+func _process(_delta):
+	# Handle restart input explicitly (works anytime)
+	if Input.is_action_just_pressed("reset_game"):
+		print("Restarting game...")
 		get_tree().paused = false
 		get_tree().reload_current_scene()
 		return
 
 	# Handle start input
-	if event.is_action_pressed("ui_accept") and get_tree().paused and not game_over:
+	if Input.is_action_just_pressed("ui_accept") and get_tree().paused and not game_over:
+		print("Starting game...")
 		get_tree().paused = false
 		game_ui.hide_message()
 
 func on_player_died():
+	print("Player died!")
 	game_over = true
 	get_tree().paused = true
 	game_ui.show_game_over()
 
 func on_player_won():
+	print("Player won!")
 	game_over = true
 	get_tree().paused = true
 	game_ui.show_win()
